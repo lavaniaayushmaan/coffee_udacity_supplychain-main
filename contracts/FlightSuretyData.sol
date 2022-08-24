@@ -6,9 +6,8 @@ import "../node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol";
 contract FlightSuretyData {
     using SafeMath for uint256;
 
-/********************************************************************************************/
-/* DATA VARIABLES                                     */
-/********************************************************************************************/
+//DATA VARIABLES                      
+
 
     // Account used to deploy contract
     address private contractOwner;
@@ -40,9 +39,7 @@ contract FlightSuretyData {
     mapping(address => uint256) funds;
     mapping(bytes32 => uint256) flightSurety;
 
-/********************************************************************************************/
-/*  EVENT DEFINITIONS                  */
-/********************************************************************************************/
+//EVENT DEFINITIONS          
 
     event AuthorizedCaller(address caller);
     event DeAuthorizedCaller(address caller);
@@ -78,9 +75,7 @@ contract FlightSuretyData {
 
 
 
-/********************************************************************************************/
-/* FUNCTION MODIFIERS                                 */
-/********************************************************************************************/
+//FUNCTION MODIFIERS                            
 
     // Modifiers help avoid duplication of code. They are typically used to validate something
     // before a function is allowed to be executed.
@@ -107,9 +102,9 @@ contract FlightSuretyData {
 
 
 
-/********************************************************************************************/
-/*  UTILITY FUNCTIONS                                  */
-/********************************************************************************************/
+
+// UTILITY FUNCTIONS                      
+
 
     /**
     * @dev Retrieve operating status from the contract
@@ -133,9 +128,7 @@ contract FlightSuretyData {
     }
 
 
-/********************************************************************************************/
-/*  SMART CONTRACT FUNCTIONS LIST                                 */
-/********************************************************************************************/
+// SMART CONTRACT FUNCTIONS LIST                    
 
 // Need to list out the actual functions of FlightSuretyApp.sol so it knows what to do...this goes here:
 
@@ -216,9 +209,7 @@ contract FlightSuretyData {
 
 }
 
-/********************************************************************************************/
-/* INITIAL TRIAL CODE (KEPT FOR REFERENCE FROM FIRST TRY)                                   */
-/********************************************************************************************/
+// INITIAL TRIAL CODE (KEPT FOR REFERENCE FROM FIRST TRY)                                   */
 
 /*
     /**

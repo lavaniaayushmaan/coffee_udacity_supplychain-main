@@ -8,16 +8,11 @@ pragma solidity >=0.4.25;
 // Import SafeMath solidity library from Open-Zeppelin:
 import "../node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol";
 
-/************************************************** */
-/* FlightSurety Smart Contract                      */
-/************************************************** */
 contract FlightSuretyApp {
     // Allow SafeMath functions to be called for all uint256 types (similar to "prototype" in Javascript)
     using SafeMath for uint256;
 
-    /********************************************************************************************/
-    /*                                GLOBAL DATA VARIABLES                                     */
-    /********************************************************************************************/
+    // GLOBAL DATA VARIABLES                                     
 
     // Establish codes for each status
     // Status: Unknown
@@ -51,9 +46,7 @@ contract FlightSuretyApp {
     // UPDATE: Removed b/c was confusing the algo
      FlightSuretyData flightSuretyData;
 
-    /********************************************************************************************/
-    /*                                FUNCTION MODIFIERS                                        */
-    /********************************************************************************************/
+    //FUNCTION MODIFIERS          
 
     // Modifiers help avoid duplication of code. They are typically used to validate something
     // before a function is allowed to be executed.
@@ -81,9 +74,7 @@ contract FlightSuretyApp {
     }
 
 
-   /********************************************************************************************/
-   /*                                       CONSTRUCTORS                                       */
-   /********************************************************************************************/
+    //  CONSTRUCTORS                              
 
     /**
     * @dev Contract constructor
@@ -95,9 +86,7 @@ contract FlightSuretyApp {
         contractOwner = msg.sender;
     }
 
-   /********************************************************************************************/
-   /*                                     UTILITY FUNCTIONS                                    */
-   /********************************************************************************************/
+   //  UTILITY FUNCTIONS                                 
 
     function isOperational()
         public
@@ -111,9 +100,7 @@ contract FlightSuretyApp {
     }
 
 
- /********************************************************************************************/
- /*                           SMART CONTRACTS: AIRLINE FUNCTIONS                             */
- /********************************************************************************************/
+  //AIRLINE FUNCTIONS                     
 
     /**
     * @dev Add an airline to the registration queue
@@ -192,9 +179,9 @@ contract FlightSuretyApp {
     1. Applied
     2. Registered
     3. Paid */
-    // event AirlineApplied(address airline);
-    // event AirlineRegistered(address airline);
-    // event AirlinePaid(address airline);
+     event AirlineApplied(address airline);
+     event AirlineRegistered(address airline);
+     event AirlinePaid(address airline);
 
     /* Establish 3 functions for Airlines:
     1. applyForAirlineRegistration() = the airline applies for registration - this is an external "action"
@@ -244,10 +231,8 @@ contract FlightSuretyApp {
         emit AirlinePaid(msg.sender);
     }
 
-*/
- /********************************************************************************************/
- /*                          PASSENGER INSURANCE CODES / FUNCTIONS                           */
- /********************************************************************************************/
+// PASSENGER INSURANCE CODES / FUNCTIONS  
+                        
 // uint8 private constant MAX_INSURANCE_AMOUNT = 10;
 // uint8 private constant INSURANCE_DIVIDER;
 // uint8 private nonce = 0;
@@ -317,9 +302,8 @@ function withdrawBalance() external
 */
 
 
-/********************************************************************************************/
-/* ORACLE MANAGEMENT                                  */
-/********************************************************************************************/
+
+//ORACLE MANAGEMENT               
 
     // Incremented to add pseudo-randomness at various points
     uint8 private nonce = 0;
@@ -501,9 +485,8 @@ function withdrawBalance() external
     }
 
 
-/********************************************************************************************/
-/*                                 END REGION - DATA CONTRACT                               */
-/********************************************************************************************/
+// END REGION - DATA CONTRACT               
+
 
 // FlightSuretyData encapsulations functions
 /*
